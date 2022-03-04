@@ -15,7 +15,7 @@ const viewsPath = path.join(__dirname, './templates/views');
 const partialsPath = path.join(__dirname, './templates/partials');
 
 const pageRouter = require('./routers/page');
-const streamRouter = require('./routers/stream');
+const movieRouter = require('./routers/movie');
 
 // Setup handlebars engine and views location
 app.set('view engine', 'hbs');
@@ -29,7 +29,7 @@ app.use(bodyParser.json());
 app.use(express.json());
 
 app.use(pageRouter);
-app.use(streamRouter);
+app.use(movieRouter);
 
 
 module.exports = app;

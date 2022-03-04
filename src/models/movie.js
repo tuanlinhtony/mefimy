@@ -10,10 +10,28 @@ const movieSchema = new mongoose.Schema({
         type: String,
         required:true
     },
-    movie_url:{
+    movie_video:{
         type: String,
         required:true
     },
+    movie_video_endtime:{
+        type: String,
+        required:true
+    },
+    movie_audio:{
+        type: String,
+        required:true
+    },
+    movie_video_endmovie:{
+        type: String,
+        required:true
+    },
+    movie_banner: {
+        type: Buffer,
+    },
+    movie_poster: {
+        type: Buffer,
+    }
 } ,
 {
     timestamps: true
