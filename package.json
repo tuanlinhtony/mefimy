@@ -1,0 +1,28 @@
+{
+  "name": "mefim",
+  "version": "1.0.0",
+  "description": "make a movie website that earn money with ads",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "env-cmd -f ./config/dev.env nodemon index.js"
+  },
+  "author": "tony",
+  "license": "ISC",
+  "devDependencies": {
+    "dotenv": "^16.0.0",
+    "env-cmd": "^10.1.0"
+  },
+  "dependencies": {
+    "crypto-js": "^4.1.1",
+    "express": "^4.17.3",
+    "googleapis": "^95.0.0",
+    "hbs": "^4.2.0",
+    "is-stream": "^3.0.0",
+    "mongodb": "^4.4.0",
+    "mongoose": "^6.2.4",
+    "nodemon": "^2.0.15",
+    "socket.io": "^4.4.1",
+    "validator": "^13.7.0"
+  }
+}
