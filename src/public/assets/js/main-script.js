@@ -1,28 +1,20 @@
 
 $(document).ready(function () {
-
     //autoplay hero section video 
-
     setTimeout(function () {
-        document.getElementById("hero-audio").volume = 0.5;
         document.getElementById("hero-video").play();
-        document.getElementById("hero-audio").play();
     }, 5000);
 
     //onscroll change header color 
     $(window).on("scroll", function() {
         if($(window).scrollTop() > 100) {
-            $("header").css("background-color", "black");
+            
             document.getElementById("hero-video").pause();
-            document.getElementById("hero-audio").pause();
+            
         } else if($(window).scrollTop() < 10) {
             //remove the background property so it comes transparent again (defined in your css)
             $("header").css("background-color", "transparent");
-            
-            document.getElementById("hero-audio").volume = 0.5;
             document.getElementById("hero-video").play();
-            document.getElementById("hero-audio").play();
-            
         }
     });
 
