@@ -19,10 +19,7 @@ router.get('/', (req,res) => {
     });  
 })
 
-// Create router for index page
-router.get('/single', (req,res) => {
-    res.render('single');  
-})
+
 
 
 

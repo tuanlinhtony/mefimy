@@ -6,28 +6,29 @@ const movieSchema = new mongoose.Schema({
         type: String,
         required:true
     },
-    movie_name:{
+    movie_name_1:{
         type: String,
         required:true
+    },
+    movie_name_2:{
+        type: String,
+        
+    },
+    movie_name_3:{
+        type: String,
+        
+    },
+    movie_name_4:{
+        type: String,
+        
+    },
+    movie_name_5:{
+        type: String,
+        
     },
     movie_video:{
         type: String,
         required:true
-    },
-    movie_video_endtime:{
-        type: String,
-        required:true
-    },
-    movie_audio:{
-        type: String,
-        required:true
-    },
-    movie_video_endmovie:{
-        type: String,
-        required:true
-    },
-    movie_banner: {
-        type: Buffer,
     },
     movie_poster: {
         type: Buffer,
