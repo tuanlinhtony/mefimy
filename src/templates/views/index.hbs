@@ -59,9 +59,10 @@
                 <section id="browse-dashboard" class=" d-flex direction-column flex-start middle-align">
                     <div>
                         <!--trailer video-->
+                        
                         <video class="hero-background-image" id="hero-video" 
-                           poster={{slider_image_01}}>
-                            <source src="//cdn-cf-east.streamable.com/video/mp4/zeynko.mp4?Expires=1646721900&Signature=c-Gwpz4udHMrORLEP16kiie6gPH3o5X5lAfoVeh3Pl65NUx809ST58rGWYtB-XNfxN~LL5YtmVGwrQISgB-bB9garG83xWtJ39qz6cnitxarpAGqRJpnDXvMGl91Y3gbpoWIQjnFRV4Ma273WmbOTtnGxZ-FVdIs1yskfWt-oog~nf7ZieVcIRf76qN3rY3snnjGsRbHQBlfsgm3sH-PYkEfZSXNycMEDvezYjDGyLClWI0TuQ08-lZ6oL3Z6QGMduOc2Yt7lr71l09U3eZRWgAhZRqdwJ3shrgulT3T9HPzjAf9TGhCN-pCnfmhALY3QimhrFky0xV~wbMYZRuoFw__&Key-Pair-Id=APKAIEYUVEN4EVB2OKEQ"
+                           poster= {{slider_image_01}}>
+                            <source src=""
                                 type="video/mp4">
                            Your browser does not support the video tag.
                         </video>
@@ -101,10 +102,7 @@
 
                         <div class="synopsis m-t-20" style="max-width: 500px;">
                             <p>
-                                Suzu-là một học sinh trung học trở thành ca sĩ được yêu thích trên
-                                toàn cầu sau khi bước vào thế giới ảo. Cô bé sớm
-                                bắt đầu một nhiệm vụ đầy cảm xúc và tuyệt vời để khám phá ra danh tính của 
-                                một quái vật đang chạy trốn.
+                               {{synopsis}}
                             </p>
                         </div>
                         <div class="buttons-container m-t-20">
@@ -112,7 +110,7 @@
                                     <svg viewBox="0 0 24 24">
                                         <path d="M6 4l15 8-15 8z" fill="currentColor"></path>
                                     </svg>
-                                </span> <a href="/single">Xem Phim</a></button>
+                                </span> <a href="/watch/{{movieid_01}}" data=>Xem Phim</a></button>
 
                             <button class="more-info-button m-t-20"><span>
                                     <svg viewBox="0 0 24 24">

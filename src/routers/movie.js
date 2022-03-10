@@ -10,7 +10,7 @@ const sharp = require('sharp')
 const router = new express.Router();
 
 const Movie = require('../models/movie')
-const Slider = require('../models/slider')
+const Slider_01 = require('../models/slider/slider_01')
 
 const app = express()
 const server = http.createServer(app)
@@ -30,15 +30,16 @@ const upload = multer({
 })
 
 // Create router for add video
-router.post('/videos/add', upload.single('movie_poster'), async (req,res) => {
+router.post('/videos/add', upload.single('slider_image'), async (req,res) => {
     const movie = new Movie(req.body)
+    const slider_01 = new Slider_01(req.body)
     movie.movie_id = crypto.randomBytes(16).toString("hex")
-    const buffer = await sharp(req.file.buffer).resize({width: 250, height: 250}).png().toBuffer()
-    movie.movie_poster = buffer
-    console.log(buffer)
+    slider_01.movie_id = movie.movie_id
     console.log(movie)
+    console.log(slider_01)
     try{
         await movie.save()
+        await slider_01.save()
         res.status(201).send(movie)
         console.log(movie.movie_name_1 + ' was created succesful!')
     }catch(e){
@@ -47,13 +48,7 @@ router.post('/videos/add', upload.single('movie_poster'), async (req,res) => {
     }
 })
 
-// Create router for index page
-router.post('/',  async (req,res) => {
-    const slider = new Slider();
-    res.render('index', {
-         
-    })
-})
+
 
 // Create router for index page
 router.get('/watch/:id', async (req,res) => {
@@ -68,9 +63,7 @@ router.get('/watch/:id', async (req,res) => {
         }
         
         res.render('single', {
-            src: movie.movie_url,
-            movie_name: movie.movie_name,
-            data: movie.movie_id
+            movie_src: movie.movie_video,
         });
         console.log('Found a result', movie)
     }catch(e){

@@ -30,9 +30,7 @@ const movieSchema = new mongoose.Schema({
         type: String,
         required:true
     },
-    movie_poster: {
-        type: Buffer,
-    }
+   
 } ,
 {
     timestamps: true

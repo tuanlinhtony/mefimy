@@ -8,20 +8,22 @@ const router = new express.Router()
 const app = express()
 const server = http.createServer(app)
 const io = socketio(server)
+const slider_01 = require('../models/slider/slider_01')
+const { render } = require('../app')
 
 // Create router for index page
 router.get('/', (req,res) => {
-    const d = new Date();
-    let year = d.getFullYear();
-    res.render('index', {
-        year:year,
-        movie_name_slide_item_2: 'Belle: Rồng và công chúa tàn nhang'
-    });  
+    slider_01.find((err, docs) => {
+        const string = JSON.stringify(docs);
+        const objectValue = JSON.parse(string);
+        console.log(objectValue[0].slider_image);
+        res.render('index', {
+            slider_image_01: objectValue[0].slider_image,
+            synopsis: objectValue[0].synopsis,
+            movieid_01:objectValue[0].movie_id
+        })
+
+    })
 })
-
-
-
-
-
 
 module.exports = router
